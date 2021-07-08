@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project provides an API for a gamer e-commerce. It is developed with Ruby on Rails. 
 
-Things you may want to cover:
+To run this project, you must to have docker installed. Go to the docker folder and run: 
 
-* Ruby version
+'''
+user@machine: cd e-commerce/docker/
+user@machine:e-commerce$ e-commerce/docker/ docker-compose up -d 
+'''
+The comand will run the postgree machine and the adminer. 
 
-* System dependencies
+Then you can start the application. You can create the databases with the folow commands
 
-* Configuration
+'''
+user@machine:e-commerce$ rails db:create
+user@machine:e-commerce$ rails db:migrate
+'''
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
