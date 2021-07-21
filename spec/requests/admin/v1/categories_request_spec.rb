@@ -119,7 +119,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
     end
 
     context "DELETE /categories/" do
-        let(:category) {create(:category)}
+        let!(:category) {create(:category)}
         let(:url) { "/admin/v1/categories/#{category.id}"}
 
         it "removes category" do 
@@ -139,7 +139,7 @@ RSpec.describe "Admin::V1::Categories", type: :request do
         end
 
         it "remove all assossiated product categories" do
-            product_categories = create_list(:product_categories, 3, category: category)
+            product_categories = create_list(:product_category, 3, category: category)
             delete url, headers: auth_header(user)
             expected_product_categories = ProductCategory.where(id: product_categories.map(&:id))
             expect(expected_product_categories).to eq []
